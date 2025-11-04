@@ -35,3 +35,13 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import '@ionic/angular/css/palettes/dark.system.css';
+
+.form-error{
+    background-color: red;
+}
+
+img {
+    width: 25px;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+}

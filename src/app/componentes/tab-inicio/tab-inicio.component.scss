@@ -1,0 +1,26 @@
+img {
+    width: 25px;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+}
+
+.btn {
+    border: none;
+    width: 100px;
+    transition: .3s linear;
+    background-color: rgb(255, 82, 82);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px; // espacio entre ícono y texto
+    padding: 8px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

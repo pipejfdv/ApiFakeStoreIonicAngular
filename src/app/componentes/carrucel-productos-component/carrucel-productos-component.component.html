@@ -1,0 +1,25 @@
+<ion-grid>
+  <ion-row>
+    @for (iterador of listaDeRecepcion; track iterador.id){
+    <ion-col size="6" size-sm="4">
+      <ion-card>
+        <img alt="Silhouette of mountains" [src]="iterador.image" />
+        <ion-card-header>
+          <ion-card-title >{{iterador.title}}</ion-card-title>
+          <ion-card-subtitle>Precio: ${{iterador.price}}</ion-card-subtitle>
+        </ion-card-header>
+
+        <ion-card-content>
+          <p>Clasificación ⭐ {{iterador.rating.rate}}</p>
+          @if (!vistaCarrito){
+            <ion-button (click)="comprarProducto(iterador)">Comprar</ion-button>
+          }
+          @else{
+            <ion-button (click)="eliminarProducto(iterador)" color="warning">Eliminar</ion-button>
+          }
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+    }
+  </ion-row>
+</ion-grid>
