@@ -129,7 +129,7 @@ export class FormularioUsuarioComponentComponent  implements OnInit {
         Validators.max(50)
       ]],
       ciudad: [this.datosDelUsuario?.ciudad || '', Validators.required],
-      direccion: ['', [
+      direccion: [this.datosDelUsuario?.direccion || '', [
         Validators.required,
         Validators.maxLength(250),
         Validators.minLength(5)

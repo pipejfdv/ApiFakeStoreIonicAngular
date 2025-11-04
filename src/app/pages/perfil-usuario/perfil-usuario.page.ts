@@ -17,6 +17,7 @@ import { UsuariosDB } from 'src/app/data/services/usuarios-db';
 export class PerfilUsuarioPage implements OnInit {
 
   usuarioServices = inject(UsuariosDB)
+  defectoImagen = "/assets/girl-8435340_1280.png"
   constructor() { }
 
   ngOnInit() {}

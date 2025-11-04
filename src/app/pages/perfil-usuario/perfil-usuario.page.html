@@ -10,7 +10,10 @@
       <ion-title size="large">perfilUsuario</ion-title>
     </ion-toolbar>
   </ion-header>
-
+  <div class="container">
+    <img [src]="defectoImagen">
+  </div>
+  
   <app-formulario-usuario-component [modoEdicion]="true" (datosDelUsuarioParaActualizarYCrear)="actulizarDatosDeUsuario($event)"></app-formulario-usuario-component>
 
 </ion-content>

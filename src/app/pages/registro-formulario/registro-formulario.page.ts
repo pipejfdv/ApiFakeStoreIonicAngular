@@ -17,7 +17,6 @@ import { Usuario } from 'src/app/data/interfaces/usuario.model';
 export class RegistroFormularioPage implements OnInit {
 
   usuarioServices = inject(UsuariosDB)
-
   constructor() {}
 
   ngOnInit() {}
