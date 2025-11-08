@@ -1,0 +1,39 @@
+
+<form [formGroup]="formularioRegistroProducto">
+  <ion-grid>
+  <ion-row>
+    <ion-col>
+      <h5>Nombre del producto</h5>
+      <ion-input type="text" formControlName="titulo"></ion-input>
+      @if(titulo.hasError("required") && titulo.touched){
+        <label class="form-error">El nombre del producto es requerido</label>
+      }
+      @else if(titulo.hasError("maxlength")){
+        <label class="form-error">El nombre del producto es muy largo, maximo 30 caracteres</label>
+      }
+      @else if(titulo.hasError("pattern")){
+        <label class="form-error">No puede contener caracteres diferentes del abcedario</label>
+      }
+      @else if(titulo.hasError("minLength")){
+        <label class="form-error">El nombre es muy corto</label>
+      }
+    </ion-col>
+    <ion-col>
+      <h5>Precio del producto</h5>
+      <ion-input type="number" formControlName="precio"></ion-input>
+      @if(precio.hasError("required")){
+        <label class="form-error">Requiere un valor númerico</label>
+      }
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <h5>Descripción</h5>
+      <ion-input type="text" formControlName="descripcion"></ion-input>
+      @if (descripcion.hasError("maxLength")){
+        <label class="form-error">La descripción no puede superar los 250 caracteres</label>
+      }
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</form>
