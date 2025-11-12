@@ -1,5 +1,5 @@
 
-<form [formGroup]="formularioRegistroProducto">
+<form [formGroup]="formularioRegistroProducto" (ngSubmit)="registroProducto()">
   <ion-grid>
   <ion-row>
     <ion-col>
@@ -21,7 +21,7 @@
     <ion-col>
       <h5>Precio del producto</h5>
       <ion-input type="number" formControlName="precio"></ion-input>
-      @if(precio.hasError("required")){
+      @if(precio.hasError("required") && precio.touched){
         <label class="form-error">Requiere un valor númerico</label>
       }
     </ion-col>
@@ -35,5 +35,41 @@
       }
     </ion-col>
   </ion-row>
+  <ion-row>
+    <ion-col>
+      <h5>Categoria</h5>
+      <ion-input type="text" formControlName="categoria"></ion-input>
+      @if (categoria.hasError("required") && categoria.touched ){
+        <label class="form-error">El campo es requerido</label>
+      }
+      @else if(descripcion.hasError("maxLength")){        
+        <label class="form-error">La categoria no puede superar los 30 caracteres</label>
+      }
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <h5>Imagen</h5>
+      <ion-input type="text" placeholder="URL de la imagen" formControlName="imagen"></ion-input>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <h5>Unidades disponibles</h5>
+      <ion-input type="number" formControlName="unidades"></ion-input>
+      @if(unidades.hasError("required") && unidades.touched){
+        <label class="form-error">Campo requerido</label>
+      }
+      @else if(unidades.hasError("min")){
+        <label class="form-error">Valor minimo para el registro es 1</label>
+      }
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-button type="submit" [disabled]="formularioRegistroProducto.invalid">Guardar</ion-button>
+    </ion-col>
+  </ion-row>
 </ion-grid>
 </form>
+

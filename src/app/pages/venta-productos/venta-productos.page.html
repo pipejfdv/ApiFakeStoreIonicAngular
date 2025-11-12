@@ -11,5 +11,13 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-formulario-producto></app-formulario-producto>
+  <app-formulario-producto (prodcutoCreado)="guardarProducto($event)"></app-formulario-producto>
+
+@if(listaProductosCreados.length >= 1){
+  <app-carrucel-productos-component [listaDeRecepcion]="listaProductosCreados"></app-carrucel-productos-component>
+}
+@else{
+  <label>No has creado productos</label>
+}
 </ion-content>
+<app-tab-inicio></app-tab-inicio>

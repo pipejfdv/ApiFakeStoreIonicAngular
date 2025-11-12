@@ -11,6 +11,12 @@
       <ion-title size="large">carritoCompras</ion-title>
     </ion-toolbar>
   </ion-header>
-  <app-carrucel-productos-component [listaDeRecepcion]="listaProducto" [vistaCarrito]="true"></app-carrucel-productos-component>
+  @if(listaProducto.length >= 1){
+    <app-carrucel-productos-component [listaDeRecepcion]="listaProducto" [vistaCarrito]="true"></app-carrucel-productos-component>
+  }
+  @else{
+    <label>No hay productos</label>
+  }
+  
 </ion-content>
 <app-tab-inicio></app-tab-inicio>

@@ -1,8 +1,9 @@
-import { Component, EventEmitter, inject, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Prodcuto } from 'src/app/data/interfaces/producto.model';
 import { ProductoServices } from 'src/app/data/services/producto-services';
 import { IonGrid, IonCol, IonInput, IonButton, IonRow } from '@ionic/angular/standalone';
+import { CarrucelProductosComponentComponent } from '../carrucel-productos-component/carrucel-productos-component.component';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { IonGrid, IonCol, IonInput, IonButton, IonRow } from '@ionic/angular/sta
   templateUrl: './formulario-producto.component.html',
   styleUrls: ['./formulario-producto.component.scss', '../../../../src/global.scss'],
   standalone:true,
-  imports:[IonGrid, IonCol, IonInput, IonButton, IonRow, FormsModule, ReactiveFormsModule]
+  imports:[IonGrid, IonCol, IonInput, IonButton, IonRow, FormsModule, ReactiveFormsModule, CarrucelProductosComponentComponent]
 })
 export class FormularioProductoComponent  implements OnInit {
 

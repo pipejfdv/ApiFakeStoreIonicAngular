@@ -8,6 +8,7 @@ import { Prodcuto } from '../interfaces/producto.model';
 })
 export class ProductoServices {
   listaProductosEnCompra:Prodcuto[]=[];
+  listaProductosFormulario:Prodcuto[]=[];
 
   private http = inject(HttpClient)
   urlApi = "https://fakestoreapi.com/products"
@@ -26,5 +27,9 @@ export class ProductoServices {
     );
     this.listaProductosEnCompra.splice(indice, 1);
 
+  }
+
+  guardarProductoEnFormulario(data: Prodcuto){
+    this.listaProductosFormulario.push(data)
   }
 }
