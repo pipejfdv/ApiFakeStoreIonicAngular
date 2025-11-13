@@ -2,7 +2,7 @@
 <form [formGroup]="formularioRegistroProducto" (ngSubmit)="registroProducto()">
   <ion-grid>
   <ion-row>
-    <ion-col>
+    <ion-col size="12">
       <h5>Nombre del producto</h5>
       <ion-input type="text" formControlName="titulo"></ion-input>
       @if(titulo.hasError("required") && titulo.touched){
@@ -18,7 +18,7 @@
         <label class="form-error">El nombre es muy corto</label>
       }
     </ion-col>
-    <ion-col>
+    <ion-col size="12">
       <h5>Precio del producto</h5>
       <ion-input type="number" formControlName="precio"></ion-input>
       @if(precio.hasError("required") && precio.touched){
