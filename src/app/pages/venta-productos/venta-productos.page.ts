@@ -27,5 +27,13 @@ export class VentaProductosPage implements OnInit {
   guardarProducto(data: Prodcuto){
     this.listaProductosCreados.push(data)
     this.servicioProducto.guardarProductoEnFormulario(data)
+    this.servicioProducto.postProductoApi(data).subscribe({
+      next:(informacion)=>{
+        console.log("producto creado", informacion)
+      },
+      error:(err)=>{
+        console.log("Error al crear producto", err)
+      }
+    })
   }
 }

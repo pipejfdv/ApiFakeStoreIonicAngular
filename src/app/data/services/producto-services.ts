@@ -8,13 +8,17 @@ import { Prodcuto } from '../interfaces/producto.model';
 })
 export class ProductoServices {
   listaProductosEnCompra:Prodcuto[]=[];
-  listaProductosFormulario:Prodcuto[]=[];
+  listadoDeProductos:Prodcuto[]=[];
 
   private http = inject(HttpClient)
   urlApi = "https://fakestoreapi.com/products"
 
   getAllProductosApi():Observable<Prodcuto[]>{
     return this.http.get<Prodcuto[]>(this.urlApi)
+  }
+
+  postProductoApi(data: Prodcuto):Observable<Prodcuto>{
+    return this.http.post<Prodcuto>(this.urlApi, data)
   }
 
   guardarProductoEnCarritoCompras(dato:Prodcuto){
@@ -30,6 +34,6 @@ export class ProductoServices {
   }
 
   guardarProductoEnFormulario(data: Prodcuto){
-    this.listaProductosFormulario.push(data)
+    this.listadoDeProductos.push(data)
   }
 }

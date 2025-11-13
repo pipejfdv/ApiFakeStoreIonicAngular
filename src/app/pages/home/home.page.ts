@@ -20,7 +20,7 @@ export class HomePage implements OnInit{
   usuarioServices = inject(UsuariosDB);
 
   nombreUsuario =  this.usuarioServices.usuarioLogueado.nombre
-  listaProductos:Prodcuto[]=[]
+  listaProductos:Prodcuto[]=this.productoServices.listadoDeProductos
 
   constructor() {}
 
@@ -44,7 +44,7 @@ export class HomePage implements OnInit{
               count:p.rating.count
             }
           }
-          this.listaProductos.push(producto);
+          this.productoServices.guardarProductoEnFormulario(producto);
         });
       },
       error:(err) =>{
