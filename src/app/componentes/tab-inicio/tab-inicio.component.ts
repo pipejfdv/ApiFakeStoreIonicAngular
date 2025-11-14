@@ -31,4 +31,8 @@ export class TabInicioComponent  implements OnInit {
   paginaVentas(){
     this.router.navigate(['/venta-productos']);
   }
+
+  paginaIngreso(){
+    this.router.navigate(['/ingreso-registro']);
+  }
 }

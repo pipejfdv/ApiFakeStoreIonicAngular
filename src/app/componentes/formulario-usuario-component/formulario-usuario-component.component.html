@@ -1,136 +1,167 @@
-<main>
+<main class="contenedor-crema">
   <form [formGroup]="formularioRegistro" (ngSubmit)="registroEnUsuarioDB()">
     <ion-grid>
+
+      <!-- Nombre -->
       <ion-row>
         <ion-col>
-          <ion-input type="text" label="Nombre" id="nombre" formControlName="nombres"></ion-input>
+          <h3 class="titulo-form">Nombre</h3>
+          <input class="campo-input" type="text" id="nombre" formControlName="nombres">
           @if(nombres.hasError("required") && nombres.touched){
-          <label class="form-error">El campo nombre es requerido</label>
+            <label class="form-error">El campo nombre es requerido</label>
           }
           @else if(nombres.hasError("maxlength") && nombres.touched){
-          <label class="form-error">El nombre no puede ser tan largo</label>
+            <label class="form-error">El nombre no puede ser tan largo</label>
           }
           @else if(nombres.hasError("minlength") && nombres.touched){
-          <label class="form-error">El nombre no puede ser tan corto</label>
+            <label class="form-error">El nombre no puede ser tan corto</label>
           }
           @else if(nombres.hasError("pattern") && nombres.touched){
-          <label class="form-error">El nombre no puede tener caracteres diferentes al abecedario</label>
+            <label class="form-error">El nombre no puede tener caracteres diferentes al abecedario</label>
           }
         </ion-col>
       </ion-row>
+
+      <!-- Apellido -->
       <ion-row>
         <ion-col>
-          <ion-input type="text" label="Apellido" id="apellido" formControlName="apellidos"></ion-input>
+          <h3 class="titulo-form">Apellido</h3>
+          <input class="campo-input" type="text" id="apellido" formControlName="apellidos">
           @if(apellidos.hasError("required") && apellidos.touched){
-          <label class="form-error">El campo apellido es requerido</label>
+            <label class="form-error">El campo apellido es requerido</label>
           }
           @else if(apellidos.hasError("maxlength") && apellidos.touched){
-          <label class="form-error">El apellido no puede ser tan largo</label>
+            <label class="form-error">El apellido no puede ser tan largo</label>
           }
           @else if(apellidos.hasError("minlength") && apellidos.touched){
-          <label class="form-error">El apellido no puede ser tan corto</label>
+            <label class="form-error">El apellido no puede ser tan corto</label>
           }
           @else if(apellidos.hasError("pattern") && apellidos.touched){
-          <label class="form-error">El nombre no puede tener caracteres diferentes al abecedario</label>
+            <label class="form-error">El apellido no puede tener caracteres diferentes al abecedario</label>
           }
         </ion-col>
       </ion-row>
+
+      <!-- Edad -->
       <ion-row>
         <ion-col>
-          <ion-input type="number" label="Edad" id="edad" formControlName="edad"></ion-input>
+          <h3 class="titulo-form">Edad</h3>
+          <input class="campo-input" type="number" id="edad" formControlName="edad">
           @if(edad.hasError("required") && edad.touched){
-          <label class="form-error">El campo edad es requerido</label>
+            <label class="form-error">El campo edad es requerido</label>
           }
           @else if(edad.hasError("min") && edad.touched){
-          <label class="form-error">Menores de edad no están permitidos</label>
+            <label class="form-error">Menores de edad no están permitidos</label>
           }
           @else if(edad.hasError("max") && edad.touched){
-          <label class="form-error">Mayores de edad de 50 no están permitidos</label>
+            <label class="form-error">Mayores de edad de 50 no están permitidos</label>
           }
         </ion-col>
+      </ion-row>
+
+      <!-- Ciudad -->
+      <ion-row>
         <ion-col>
           <ion-list>
-            <ion-item>
+            <ion-item >
               <ion-select label="Residencia" placeholder="Ciudad" id="ciudad" formControlName="ciudad">
                 @for (ciudad of ciudades; track ciudad.id) {
-                <ion-select-option [value]="ciudad.ciudad">{{ciudad.ciudad}}</ion-select-option>
+                  <ion-select-option [value]="ciudad.ciudad">{{ciudad.ciudad}}</ion-select-option>
                 }
                 @if(ciudad.hasError("required") && ciudad.touched){
-                <label class="form-error">No has seleccionado una ciudad de la lista</label>
+                  <label class="form-error">No has seleccionado una ciudad de la lista</label>
                 }
               </ion-select>
             </ion-item>
           </ion-list>
         </ion-col>
       </ion-row>
+
+      <!-- Dirección -->
       <ion-row>
         <ion-col>
-          <ion-input type="text" label="Dirección" id="direccion" formControlName="direccion"></ion-input>
+          <h3 class="titulo-form">Dirección</h3>
+          <input class="campo-input" type="text" id="direccion" formControlName="direccion">
           @if(direccion.hasError("required") && direccion.touched){
-          <label class="form-error">La dirección es requerida</label>
+            <label class="form-error">La dirección es requerida</label>
           }
           @else if(direccion.hasError("maxlength") && direccion.touched){
-          <label class="form-error">La dirección es larga</label>
+            <label class="form-error">La dirección es larga</label>
           }
           @else if(direccion.hasError("minlength") && direccion.touched){
-          <label class="form-error">La dirección es muy corta</label>
+            <label class="form-error">La dirección es muy corta</label>
           }
         </ion-col>
       </ion-row>
+
+      <!-- Correo -->
       <ion-row>
         <ion-col>
-          <ion-input type="email" label="Correo" id="correo" formControlName="correo"></ion-input>
+          <h3 class="titulo-form">Correo</h3>
+          <input class="campo-input" type="email" id="correo" formControlName="correo">
           @if(correo.hasError("required") && correo.touched){
-          <label class="form-error">El correo es requerido</label>
+            <label class="form-error">El correo es requerido</label>
           }
           @else if(correo.hasError("email") && correo.touched){
-          <label class="form-error">El correo no es valido</label>
+            <label class="form-error">El correo no es valido</label>
           }
         </ion-col>
       </ion-row>
+
+      <!-- Contraseña -->
       <ion-row>
         <ion-col>
-          <ion-input type="password" label="Contraseña" formControlName="contrasena"></ion-input>
+          <h3 class="titulo-form">Contraseña</h3>
+          <input class="campo-input" type="password" formControlName="contrasena">
           @if(contrasena.hasError("required") && contrasena.touched){
-          <label class="form-error">La contraseña es requerida</label>
+            <label class="form-error">La contraseña es requerida</label>
           }
           @else if(contrasena.hasError("maxlength") && contrasena.touched){
-          <label class="form-error">La contraseña no puede ser mayor a 16 caracteres</label>
+            <label class="form-error">La contraseña no puede ser mayor a 16 caracteres</label>
           }
           @else if(contrasena.hasError("minlength") && contrasena.touched){
-          <label class="form-error">La contraseña no puede ser menor a 8 caracteres</label>
+            <label class="form-error">La contraseña no puede ser menor a 8 caracteres</label>
           }
         </ion-col>
       </ion-row>
+
+      <!-- Celular -->
       <ion-row>
         <ion-col>
-          <ion-input type="number" label="Celular" id="celular" formControlName="celular"></ion-input>
+          <h3 class="titulo-form">Celular</h3>
+          <input class="campo-input" type="number" id="celular" formControlName="celular">
           @if(celular.hasError("maxlength") && celular.touched){
-          <label class="form-error">El número de celular no es valido</label>
+            <label class="form-error">El número de celular no es valido</label>
           }
           @else if(celular.hasError("minlength") && celular.touched){
-          <label class="form-error">El número de celular no es valido</label>
+            <label class="form-error">El número de celular no es valido</label>
           }
         </ion-col>
       </ion-row>
+
+      <!-- Términos -->
       @if(!modoEdicion){
       <ion-row>
         <ion-col>
-          <ion-checkbox formControlName="terminosAceptados">Acepto terminos y condiciones</ion-checkbox>
+          <ion-checkbox class="checkbox-crema" formControlName="terminosAceptados">
+            <h3 class="titulo-form">Acepto términos y condiciones</h3>
+          </ion-checkbox>
         </ion-col>
       </ion-row>
       }
+
+      <!-- Botones -->
       <ion-row>
         <ion-col>
-          <ion-button type="submit" [disabled]="formularioRegistro.invalid">Guardar</ion-button>
+          <ion-button class="boton-principal" type="submit" [disabled]="formularioRegistro.invalid">Guardar</ion-button>
         </ion-col>
         @if(!modoEdicion){
         <ion-col>
-          <ion-button (click)="cancelarRegistro()">Cancelar</ion-button>
+          <ion-button class="boton-secundario" (click)="cancelarRegistro()">Cancelar</ion-button>
         </ion-col>
-      }
+        }
       </ion-row>
-      
+
     </ion-grid>
   </form>
 </main>

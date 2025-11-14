@@ -1,26 +1,68 @@
-img {
-    width: 25px;
-    aspect-ratio: 1/1;
-    object-fit: contain;
+/* Contenedor de la barra */
+.nav-crema {
+  padding: 8px 12px;
+  background: #fffaf0; /* crema claro */
+  border-top: 1px solid #e6d3b4;
 }
 
-.btn {
-    border: none;
-    width: 100px;
-    transition: .3s linear;
-    background-color: rgb(255, 82, 82);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px; // espacio entre ícono y texto
-    padding: 8px;
-    border-radius: 8px;
-    color: white;
-    font-weight: bold;
+/* Grid y columnas */
+.counterGrid {
+  gap: 8px;
+  align-items: center;
 }
 
-.container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.col-centro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Iconos */
+.icono-nav {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+/* Botón base */
+.btn-nav {
+  border: 1px solid #e6d3b4;
+  width: 100%;
+  max-width: 140px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  background-color: #fffaf0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* espacio entre ícono y texto */
+  padding: 10px 12px;
+  border-radius: 10px;
+  color: #4b3d2e;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.btn-nav:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.btn-nav:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Variantes por acción (tonos crema sutiles) */
+.btn-carrito { background-color: #f7e9cf; } /* crema cálido */
+.btn-home    { background-color: #f2e1c2; } /* crema claro */
+.btn-perfil  { background-color: #f5e7d2; } /* crema suave */
+.btn-vender  { background-color: #e7d3b3; } /* crema más acentuado */
+.btn-salir   { background-color: #fdecea; color: #b23b33; border-color: #f5c2c7; } /* alerta elegante */
+
+/* Responsivo: apila bonito en pantallas pequeñas */
+@media (max-width: 480px) {
+  .btn-nav {
+    max-width: none;
+    width: 100%;
+  }
 }

@@ -1,75 +1,90 @@
-
-<form [formGroup]="formularioRegistroProducto" (ngSubmit)="registroProducto()">
+<form class="contenedor-crema" [formGroup]="formularioRegistroProducto" (ngSubmit)="registroProducto()">
   <ion-grid>
-  <ion-row>
-    <ion-col size="12">
-      <h5>Nombre del producto</h5>
-      <ion-input type="text" formControlName="titulo"></ion-input>
-      @if(titulo.hasError("required") && titulo.touched){
-        <label class="form-error">El nombre del producto es requerido</label>
-      }
-      @else if(titulo.hasError("maxlength")){
-        <label class="form-error">El nombre del producto es muy largo, maximo 30 caracteres</label>
-      }
-      @else if(titulo.hasError("pattern")){
-        <label class="form-error">No puede contener caracteres diferentes del abcedario</label>
-      }
-      @else if(titulo.hasError("minLength")){
-        <label class="form-error">El nombre es muy corto</label>
-      }
-    </ion-col>
-    <ion-col size="12">
-      <h5>Precio del producto</h5>
-      <ion-input type="number" formControlName="precio"></ion-input>
-      @if(precio.hasError("required") && precio.touched){
-        <label class="form-error">Requiere un valor númerico</label>
-      }
-    </ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col>
-      <h5>Descripción</h5>
-      <ion-input type="text" formControlName="descripcion"></ion-input>
-      @if (descripcion.hasError("maxLength")){
-        <label class="form-error">La descripción no puede superar los 250 caracteres</label>
-      }
-    </ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col>
-      <h5>Categoria</h5>
-      <ion-input type="text" formControlName="categoria"></ion-input>
-      @if (categoria.hasError("required") && categoria.touched ){
-        <label class="form-error">El campo es requerido</label>
-      }
-      @else if(descripcion.hasError("maxLength")){        
-        <label class="form-error">La categoria no puede superar los 30 caracteres</label>
-      }
-    </ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col>
-      <h5>Imagen</h5>
-      <ion-input type="text" placeholder="URL de la imagen" formControlName="imagen"></ion-input>
-    </ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col>
-      <h5>Unidades disponibles</h5>
-      <ion-input type="number" formControlName="unidades"></ion-input>
-      @if(unidades.hasError("required") && unidades.touched){
-        <label class="form-error">Campo requerido</label>
-      }
-      @else if(unidades.hasError("min")){
-        <label class="form-error">Valor minimo para el registro es 1</label>
-      }
-    </ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col>
-      <ion-button type="submit" [disabled]="formularioRegistroProducto.invalid">Guardar</ion-button>
-    </ion-col>
-  </ion-row>
-</ion-grid>
-</form>
 
+    <!-- Nombre del producto -->
+    <ion-row>
+      <ion-col size="12">
+        <h5 class="titulo-form">Nombre del producto</h5>
+        <input class="campo-input" type="text" formControlName="titulo">
+        @if(titulo.hasError("required") && titulo.touched){
+          <label class="form-error">El nombre del producto es requerido</label>
+        }
+        @else if(titulo.hasError("maxlength")){
+          <label class="form-error">El nombre del producto es muy largo, máximo 30 caracteres</label>
+        }
+        @else if(titulo.hasError("pattern")){
+          <label class="form-error">No puede contener caracteres diferentes del abecedario</label>
+        }
+        @else if(titulo.hasError("minLength")){
+          <label class="form-error">El nombre es muy corto</label>
+        }
+      </ion-col>
+    </ion-row>
+
+    <!-- Precio -->
+    <ion-row>
+      <ion-col size="12">
+        <h5 class="titulo-form">Precio del producto</h5>
+        <input class="campo-input" type="number" formControlName="precio">
+        @if(precio.hasError("required") && precio.touched){
+          <label class="form-error">Requiere un valor numérico</label>
+        }
+      </ion-col>
+    </ion-row>
+
+    <!-- Descripción -->
+    <ion-row>
+      <ion-col>
+        <h5 class="titulo-form">Descripción</h5>
+        <input class="campo-input" type="text" formControlName="descripcion">
+        @if(descripcion.hasError("maxLength")){
+          <label class="form-error">La descripción no puede superar los 250 caracteres</label>
+        }
+      </ion-col>
+    </ion-row>
+
+    <!-- Categoría -->
+    <ion-row>
+      <ion-col>
+        <h5 class="titulo-form">Categoría</h5>
+        <input class="campo-input" type="text" formControlName="categoria">
+        @if(categoria.hasError("required") && categoria.touched){
+          <label class="form-error">El campo es requerido</label>
+        }
+        @else if(descripcion.hasError("maxLength")){        
+          <label class="form-error">La categoría no puede superar los 30 caracteres</label>
+        }
+      </ion-col>
+    </ion-row>
+
+    <!-- Imagen -->
+    <ion-row>
+      <ion-col>
+        <h5 class="titulo-form">Imagen</h5>
+        <input class="campo-input" type="text" placeholder="URL de la imagen" formControlName="imagen">
+      </ion-col>
+    </ion-row>
+
+    <!-- Unidades -->
+    <ion-row>
+      <ion-col>
+        <h5 class="titulo-form">Unidades disponibles</h5>
+        <input class="campo-input" type="number" formControlName="unidades">
+        @if(unidades.hasError("required") && unidades.touched){
+          <label class="form-error">Campo requerido</label>
+        }
+        @else if(unidades.hasError("min")){
+          <label class="form-error">Valor mínimo para el registro es 1</label>
+        }
+      </ion-col>
+    </ion-row>
+
+    <!-- Botón -->
+    <ion-row>
+      <ion-col>
+        <ion-button class="boton-principal" type="submit" [disabled]="formularioRegistroProducto.invalid">Guardar</ion-button>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</form>

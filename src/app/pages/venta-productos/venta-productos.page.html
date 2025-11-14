@@ -1,23 +1,24 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Formulario de productos</ion-title>
+<ion-header [translucent]="true" class="header-crema">
+  <ion-toolbar class="toolbar-crema">
+    <ion-title class="titulo-header">Formulario de productos</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="contenido-crema">
   <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">ventaProductos</ion-title>
+    <ion-toolbar class="toolbar-crema">
+      <ion-title size="large" class="titulo-header">ventaProductos</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <app-formulario-producto (prodcutoCreado)="guardarProducto($event)"></app-formulario-producto>
 
-@if(listaProductosCreados.length >= 1){
-  <app-carrucel-productos-component [listaDeRecepcion]="listaProductosCreados"></app-carrucel-productos-component>
-}
-@else{
-  <label>No has creado productos</label>
-}
+  @if(listaProductosCreados.length >= 1){
+    <app-carrucel-productos-component [listaDeRecepcion]="listaProductosCreados"></app-carrucel-productos-component>
+  }
+  @else{
+    <label class="form-error">No has creado productos</label>
+  }
 </ion-content>
+
 <app-tab-inicio></app-tab-inicio>

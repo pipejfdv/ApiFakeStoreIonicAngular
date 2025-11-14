@@ -1,20 +1,24 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Perfil</ion-title>
+<ion-header [translucent]="true" class="header-crema">
+  <ion-toolbar class="toolbar-crema">
+    <ion-title class="titulo-header">Perfil</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="contenido-crema">
   <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">perfilUsuario</ion-title>
+    <ion-toolbar class="toolbar-crema">
+      <ion-title size="large" class="titulo-header">perfil</ion-title>
     </ion-toolbar>
   </ion-header>
-  <div class="container">
-    <img [src]="defectoImagen">
+
+  <div class="perfil-container container">
+    <img class="imagen-perfil" [src]="defectoImagen" alt="Imagen de perfil">
   </div>
   
-  <app-formulario-usuario-component [modoEdicion]="true" (datosDelUsuarioParaActualizarYCrear)="actulizarDatosDeUsuario($event)"></app-formulario-usuario-component>
-
+  <app-formulario-usuario-component 
+    [modoEdicion]="true" 
+    (datosDelUsuarioParaActualizarYCrear)="actulizarDatosDeUsuario($event)">
+  </app-formulario-usuario-component>
 </ion-content>
+
 <app-tab-inicio></app-tab-inicio>

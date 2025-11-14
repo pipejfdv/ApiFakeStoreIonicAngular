@@ -7,6 +7,7 @@ import { ProductoServices } from 'src/app/data/services/producto-services';
 import { Prodcuto } from 'src/app/data/interfaces/producto.model';
 import { TabInicioComponent } from 'src/app/componentes/tab-inicio/tab-inicio.component';
 
+
 @Component({
   selector: 'app-carrito-compras',
   templateUrl: './carrito-compras.page.html',

@@ -1,27 +1,37 @@
-<ion-grid fixed>
+<ion-grid fixed class="nav-crema">
   <ion-row class="counterGrid">
-    <ion-col>
-      <button class="btn" (click)="paginaCarrito()">
-        <img src="./assets/icon/cart-outline.svg">
+    <ion-col class="col-centro">
+      <button class="btn-nav btn-carrito" (click)="paginaCarrito()">
+        <img class="icono-nav" src="./assets/icon/cart-outline.svg" alt="Carrito">
         Carrito
       </button>
     </ion-col>
-    <ion-col>
-      <button class="btn" (click)="paginaHome()">
-        <img src="./assets/icon/home-outline.svg">
+
+    <ion-col class="col-centro">
+      <button class="btn-nav btn-home" (click)="paginaHome()">
+        <img class="icono-nav" src="./assets/icon/home-outline.svg" alt="Home">
         Home
       </button>
     </ion-col>
-    <ion-col>
-      <button class="btn" (click)="paginaPerfil()">
-        <img src="./assets/icon/person-circle-outline.svg">
+
+    <ion-col class="col-centro">
+      <button class="btn-nav btn-perfil" (click)="paginaPerfil()">
+        <img class="icono-nav" src="./assets/icon/person-circle-outline.svg" alt="Perfil">
         Perfil
       </button>
     </ion-col>
-    <ion-col>
-      <button class="btn" (click)="paginaVentas()">
-        <img src="./assets/icon/create-outline.svg">
+
+    <ion-col class="col-centro">
+      <button class="btn-nav btn-vender" (click)="paginaVentas()">
+        <img class="icono-nav" src="./assets/icon/create-outline.svg" alt="Vender">
         Vender
+      </button>
+    </ion-col>
+
+    <ion-col class="col-centro">
+      <button class="btn-nav btn-salir" (click)="paginaIngreso()">
+        <img class="icono-nav" src="./assets/icon/exit-outline.svg" alt="Salir">
+        Salir
       </button>
     </ion-col>
   </ion-row>
